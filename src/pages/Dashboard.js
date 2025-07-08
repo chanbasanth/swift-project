@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import CommentTable from '../components/CommentTable';
 import Pagination from '../components/Pagination';
 import { saveToStorage, loadFromStorage } from '../utils/localStorage';
-import { v4 as uuidv4 } from 'uuid';
 import "./Dashboard.css";
 
 const PAGE_SIZE_OPTIONS = [10, 50, 100];
@@ -17,20 +16,8 @@ const Dashboard = () => {
   const [sortOrder, setSortOrder] = useState(null);
   const [pageSize, setPageSize] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
-  const uniqueId = uuidv4();
-  // Fetch data
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await fetch('https://jsonplaceholder.typicode.com/comments');
-  //     let data = await res.json();
-  //     console.log("Original API data sample:", data.slice(0, 1));
-  //     // Add unique ID
-  //     data = data.map(item => ({ ...item, uniqueId: uuidv4() }));
-  //     console.log("After adding uniqueId sample:", data.slice(0, 1));
-  //     setAllComments(data);
-  //   };
-  //   fetchData();
-  // }, []);
+
+  
 
   useEffect(() => {
   const fetchData = async () => {
